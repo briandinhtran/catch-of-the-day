@@ -11,8 +11,10 @@ const Root = () => {
    return (
    	<BrowserRouter>
 		<div>
+			{/* If you don't use exactly every route will go to StorePicker */}
 			<Match exactly pattern="/" component={StorePicker} />
 			<Match pattern="/store/:storeId" component={App} />
+			{/* Miss will route to NotFound component when url cannot be found*/}
 			<Miss component={NotFound} />
 		</div>
 		</BrowserRouter>	
